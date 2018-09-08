@@ -70,7 +70,9 @@ test.serial('keywords are separated correctly', async () => {
 
   await generator.run()
 
-  assert.jsonFileContent('package.json', { keywords: ['tstackgl', 'webgl', 'typescript', 'some', 'random', 'keywords'] })
+  assert.jsonFileContent('package.json', {
+    keywords: ['tstackgl', 'webgl', 'typescript', 'some', 'random', 'keywords'],
+  })
 })
 
 test.serial('moduleField option works', async () => {

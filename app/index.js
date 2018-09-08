@@ -1,10 +1,11 @@
 'use strict'
 const Generator = require('yeoman-generator')
 const _ = require('lodash')
-const superb = require('superb')
 const normalizeUrl = require('normalize-url')
 const humanizeUrl = require('humanize-url')
 const isScoped = require('is-scoped')
+
+const defaultKeywords = ['tstackgl', 'webgl', 'typescript']
 
 const slugifyPackageName = name => (isScoped(name) ? name : _.kebabCase(name))
 const getRepoName = name => (isScoped(name) ? name.split('/')[1] : name)
@@ -21,7 +22,7 @@ module.exports = class extends Generator {
       {
         name: 'moduleDescription',
         message: 'Description?',
-        default: `My ${superb()} module`,
+        default: `My tstackgl module`,
       },
       {
         name: 'keywords',
@@ -46,11 +47,11 @@ module.exports = class extends Generator {
         type: 'confirm',
         message: 'Will you lib have multiple exports? (Do you wish to support pkg.module?)',
         default: false,
-      }
+      },
     ]).then(props => {
       let moduleName = props.moduleName
       const moduleDescription = props.moduleDescription
-      let keywords = "tstackgl, webgl, typescript, " + props.keywords
+      let keywords = props.keywords
       const moduleField = props.moduleField
 
       const githubUsername = props.githubUsername
@@ -59,8 +60,10 @@ module.exports = class extends Generator {
       // these are the filters, workaround for issue https://github.com/yeoman/yeoman-test/issues/29
       if (process.env.NODE_ENV === 'test') {
         moduleName = slugifyPackageName(moduleName)
-        keywords = keywords.split(/\s*,\s*/g)
+        keywords = defaultKeywords.concat(keywords.split(/\s*,\s*/g))
         website = website ? humanizeUrl(normalizeUrl(website)) : null
+      } else {
+        keywords = defaultKeywords.concat(props.keywords)
       }
 
       const repoName = getRepoName(moduleName)
@@ -70,7 +73,7 @@ module.exports = class extends Generator {
         moduleName,
         moduleDescription,
         camelModuleName,
-        keywords,
+        keywords: keywords.filter(Boolean),
         moduleField,
         githubUsername,
         repoName,
