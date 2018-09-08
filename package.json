@@ -1,0 +1,52 @@
+{
+  "name": "generator-tstackgl-module",
+  "version": "0.0.1",
+  "description": "Scaffold out a library for tstack.gl module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nkint/generator-tstackgl-module"
+  },
+  "author": {
+    "name": "nkint",
+    "email": "nootropic.kint@gmail.com"
+  },
+  "keywords": [
+    "boilerplate",
+    "template",
+    "scaffold",
+    "library",
+    "generator",
+    "module",
+    "node-module",
+    "yeoman-generator",
+    "tstack.gl",
+    "webgl",
+    "typescript"
+  ],
+  "scripts": {
+    "test": "NODE_ENV=test ava",
+    "prepublishOnly": "npm run test"
+  },
+  "ava": {
+    "failWithoutAssertions": false
+  },
+  "main": "app/index.js",
+  "files": [
+    "app"
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "pify": "^3.0.0",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.6.0"
+  },
+  "dependencies": {
+    "humanize-url": "^1.0.1",
+    "is-scoped": "^1.0.0",
+    "lodash": "^4.17.4",
+    "normalize-url": "^2.0.0",
+    "superb": "^2.0.0",
+    "yeoman-generator": "^2.0.1"
+  }
+}
