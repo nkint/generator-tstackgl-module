@@ -2,6 +2,12 @@
 
 > <%= moduleDescription %>
 
+[![screen](http://i.imgur.com/example.png)](http://<%= githubUsername %>.github.io/<%= moduleName %>/)
+
+[(demo)](http://<%= githubUsername %>.github.io/<%= moduleName %>/)
+
+<!-- iframe: http://<%= githubUsername %>.github.io/<%= moduleName %>/index.html -->
+
 ## Install
 
 ```

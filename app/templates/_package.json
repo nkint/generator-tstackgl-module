@@ -27,10 +27,9 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@types/dat-gui": "^0.6.3",
     "browserify": "^16.2.2",
     "budo": "^11.3.2",
-    "dat-gui": "^0.5.0",
+    "canvas-fit-margin-ts": "^1.0.8",
     "tsify": "^4.0.0",
     "typescript": "^3.0.1",
     "uglify-js": "^3.4.7"
