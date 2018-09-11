@@ -14,14 +14,17 @@
   ],
   "scripts": {
     "clean": "rm -rf dist; rm -rf demo",
-    "build-dist": "tsc -d --declarationMap --declarationDir dist src/index.ts; uglifyjs -m -c warnings=false -o dist/index.js src/index.js",
+    "build-dist": "microbundle",
     "buidl-demo": "mkdir demo; browserify ./src/demo.ts -p [ tsify ] | uglifyjs -cm > demo/index.js; cp -r public/* demo/",
     "build": "npm run clean; npm run build-dist; npm run buidl-demo; rm src/index.js; ",
     "start": "budo ./src/demo.ts:index.js --open --live --dir public -- -p [ tsify ]",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "dist/<%= repoName %>.js",<% if (moduleField) { %>
-  "module": "dist/<%= repoName %>.esm.js",<% } %>
+  "source": "src/index.ts",
+  "main": "dist/<%= moduleName %>.js",
+  "umd:main": "dist/<%= moduleName %>.umd.js",
+  "module": "dist/<%= moduleName %>.m.js",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist/"
   ],
@@ -30,8 +33,8 @@
     "browserify": "^16.2.2",
     "budo": "^11.3.2",
     "canvas-fit-margin-ts": "^1.0.8",
+    "microbundle": "^0.6.0",
     "tsify": "^4.0.0",
     "typescript": "^3.0.1",
-    "uglify-js": "^3.4.7"
   }
 }

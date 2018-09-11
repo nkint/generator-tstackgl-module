@@ -42,12 +42,6 @@ module.exports = class extends Generator {
         store: true,
         filter: prompt => (prompt ? humanizeUrl(normalizeUrl(prompt)) : null),
       },
-      {
-        name: 'moduleField',
-        type: 'confirm',
-        message: 'Will you lib have multiple exports? (Do you wish to support pkg.module?)',
-        default: false,
-      },
     ]).then(props => {
       let moduleName = props.moduleName
       const moduleDescription = props.moduleDescription
