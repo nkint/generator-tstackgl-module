@@ -24,7 +24,8 @@ test.serial('generates expected files', async () => {
 
   assert.file([
     '.git',
-    'src/index.js',
+    'src/index.ts',
+    'src/demo.ts',
     'test/index.js',
     '.prettierrc',
     '.gitattributes',
@@ -32,7 +33,6 @@ test.serial('generates expected files', async () => {
     'LICENSE',
     'package.json',
     'README.md',
-    'rollup.config.js',
   ])
 })
 
@@ -73,18 +73,4 @@ test.serial('keywords are separated correctly', async () => {
   assert.jsonFileContent('package.json', {
     keywords: ['tstackgl', 'webgl', 'typescript', 'some', 'random', 'keywords'],
   })
-})
-
-test.serial('moduleField option works', async () => {
-  helpers.mockPrompt(generator, {
-    moduleName: 'test',
-    githubUsername: 'test',
-    website: 'test.com',
-    moduleField: true,
-  })
-
-  await generator.run()
-
-  assert.fileContent('package.json', /"module":/)
-  assert.fileContent('rollup.config.js', /format: 'es'/)
 })

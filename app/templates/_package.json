@@ -10,7 +10,7 @@
     "url": "<%= website %>"
   },
   "keywords": [
-    <%- keywords.map(word => JSON.stringify(word)).join(',\n    ') %>
+    <%- keywords.map(word => JSON.stringify(word)).join(',\n ') %>
   ],
   "scripts": {
     "clean": "rm -rf dist; rm -rf demo",
@@ -35,6 +35,6 @@
     "canvas-fit-margin-ts": "^1.0.8",
     "microbundle": "^0.6.0",
     "tsify": "^4.0.0",
-    "typescript": "^3.0.1",
+    "typescript": "^3.0.1"
   }
 }
