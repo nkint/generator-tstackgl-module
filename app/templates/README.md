@@ -2,7 +2,6 @@
 
 > <%= moduleDescription %>
 
-<<<<<<< HEAD
 [![screen](http://i.imgur.com/example.png)](http://<%= githubUsername %>.github.io/<%= moduleName %>/)
 
 [(demo)](http://<%= githubUsername %>.github.io/<%= moduleName %>/)
@@ -10,11 +9,6 @@
 <!-- iframe: http://<%= githubUsername %>.github.io/<%= moduleName %>/index.html -->
 
 ## Install
-||||||| merged common ancestors
-## Install
-=======
-[![screen](http://test.imgur.com/test.png)](http://<%= %name>.github.io/<%= repoName %>/)
->>>>>>> readme
 
 [(demo)](http://<%= %name>.github.io/<%= repoName %>/)
 

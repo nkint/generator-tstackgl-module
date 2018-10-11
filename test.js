@@ -24,14 +24,8 @@ test.serial('generates expected files', async () => {
 
   assert.file([
     '.git',
-<<<<<<< HEAD
     'src/index.ts',
     'src/demo.ts',
-||||||| merged common ancestors
-    'src/index.js',
-=======
-    'src/index.ts',
->>>>>>> minor change to test template
     'test/index.js',
     '.prettierrc',
     '.gitattributes',
