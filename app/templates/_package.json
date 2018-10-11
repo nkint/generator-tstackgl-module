@@ -14,11 +14,26 @@
   ],
   "scripts": {
     "clean": "rm -rf dist; rm -rf demo",
+<<<<<<< HEAD
     "build-dist": "microbundle",
     "buidl-demo": "mkdir demo; browserify ./src/demo.ts -p [ tsify ] | uglifyjs -cm > demo/index.js; cp -r public/* demo/",
     "build": "npm run clean; npm run build-dist; npm run buidl-demo; rm src/index.js; ",
     "start": "budo ./src/demo.ts:index.js --open --live --dir public -- -p [ tsify ]",
     "test": "echo \"Error: no test specified\" && exit 1"
+||||||| merged common ancestors
+    "build-dist": "tsc -d --declarationMap --declarationDir dist src/index.ts; uglifyjs -m -c warnings=false -o dist/index.js src/index.js",
+    "buidl-demo": "mkdir demo; browserify ./src/demo.ts -p [ tsify ] | uglifyjs -cm > demo/index.js; cp -r public/* demo/",
+    "build": "npm run clean; npm run build-dist; npm run buidl-demo; rm src/index.js; ",
+    "start": "budo ./src/demo.ts:index.js --open --live --dir public -- -p [ tsify ]",
+    "test": "echo \"Error: no test specified\" && exit 1"
+=======
+    "build-dist": "microbundle",
+    "build-demo": "parcel build src/demo/index.html --out-dir demo --public-url ./",
+    "build": "npm run clean; npm run build-dist; npm run build-demo",
+    "deploy": "git subtree push --prefix demo origin gh-pages",
+    "start": "parcel src/demo/index.html",
+    "test": "tsc && ava"
+>>>>>>> microbundle and parcel in favour of budo and browserify + new dist
   },
   "source": "src/index.ts",
   "main": "dist/<%= moduleName %>.js",
@@ -30,11 +45,29 @@
   ],
   "dependencies": {},
   "devDependencies": {
+<<<<<<< HEAD
     "browserify": "^16.2.2",
     "budo": "^11.3.2",
     "canvas-fit-margin-ts": "^1.0.8",
     "microbundle": "^0.6.0",
     "tsify": "^4.0.0",
     "typescript": "^3.0.1"
+||||||| merged common ancestors
+    "@types/dat-gui": "^0.6.3",
+    "browserify": "^16.2.2",
+    "budo": "^11.3.2",
+    "dat-gui": "^0.5.0",
+    "tsify": "^4.0.0",
+    "typescript": "^3.0.1",
+    "uglify-js": "^3.4.7"
+=======
+    "@types/dat-gui": "^0.6.3",
+    "ava": "^0.25.0",
+    "canvas-fit-margin-ts": "^1.0.8",
+    "dat-gui": "^0.5.0",
+    "microbundle": "^0.6.0",
+    "parcel": "^1.10.2",
+    "typescript": "^3.0.1"
+>>>>>>> microbundle and parcel in favour of budo and browserify + new dist
   }
 }
