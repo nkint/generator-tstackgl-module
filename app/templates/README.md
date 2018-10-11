@@ -2,6 +2,7 @@
 
 > <%= moduleDescription %>
 
+<<<<<<< HEAD
 [![screen](http://i.imgur.com/example.png)](http://<%= githubUsername %>.github.io/<%= moduleName %>/)
 
 [(demo)](http://<%= githubUsername %>.github.io/<%= moduleName %>/)
@@ -9,43 +10,33 @@
 <!-- iframe: http://<%= githubUsername %>.github.io/<%= moduleName %>/index.html -->
 
 ## Install
+||||||| merged common ancestors
+## Install
+=======
+[![screen](http://test.imgur.com/test.png)](http://<%= %name>.github.io/<%= repoName %>/)
+>>>>>>> readme
+
+[(demo)](http://<%= %name>.github.io/<%= repoName %>/)
+
+<!-- iframe: http://<%= %name>.github.io/<%= repoName %>/index.html -->
+
+## Install
 
 ```
 npm install <%= moduleName %>
 ```
 
-or
+## Example
 
-```
-yarn add <%= moduleName %>
+```ts
+import { foo } from <%= moduleName %>
+
+console.log(foo)
 ```
 
 ## Usage
 
-```js
-import <%= camelModuleName %> from '<%= moduleName %>'
-
-// ...
-```
-
-## API
-
-### <%= camelModuleName %>(input, [options])
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
+#### `output = foo(input)`
 
 ## License
 
