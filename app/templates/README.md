@@ -10,9 +10,9 @@
 
 ## Install
 
-[(demo)](http://<%= %name>.github.io/<%= repoName %>/)
+[(demo)](http://<%= name %>.github.io/<%= repoName %>/)
 
-<!-- iframe: http://<%= %name>.github.io/<%= repoName %>/index.html -->
+<!-- iframe: http://<%= name %>.github.io/<%= repoName %>/index.html -->
 
 ## Install
 
